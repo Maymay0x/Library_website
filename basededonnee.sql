@@ -1,5 +1,5 @@
 use heryyoh;
-SELECT * FROM heryyoh.compte;
+SELECT * FROM kkkkkkkk;
 /* Suppression de la table */
 drop table emprunt;
 drop table compte;

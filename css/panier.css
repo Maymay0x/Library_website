@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, #110022, #1f010e);
+    font-family: Arial, sans-serif;
+   background-color: #0d071d;
+    color:white;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button.delete-all, button.validate-all {
+    background-color: #443852;
+    color: white;
+    border: none;
+    padding: 10px;;
+    margin: 0 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 50px;;
+    height: 65px;
+    text-align: center;
+}
+
+button.delete-all:hover, button.validate-all:hover {
+    background-color: #5a222280;
+}
+
+table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 10px;
+    border: none;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(249, 249, 249, 0.2); 
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    border: none;
+}
+
+th {
+    background-color: rgba(226, 205, 235, 0.4); 
+}
+
+td:hover {
+    transform: scale(1.05);
+}
+
+
+img {
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 10px;
+}
+
+table button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d071d;
+    width: 95%;
+    margin-top: 15px;
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover:not(nav button) {
+    background-color: #9c516cac;
+    transform: scale(1.05);
+}
+
+nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    border-radius: 8px;
+}
+
+button:nth-child(1) {
+    width: 200px;
+}
+
+button:nth-child(2) {
+    width: 200px;
+}
+
+button:nth-child(1):hover ~ .animation {
+    width: 200px;
+    left: 0;
+    background-color: #451a3c;
+}
+
+button:nth-child(2):hover ~ .animation {
+    width: 200px;
+    left: 200px;
+    background-color: #802755;
+}
+
+nav {
+    position: relative;
+    width: 400px; /* Adjusted to fit two buttons */
+    height: 50px;
+    background-color: #a893aa;
+    border-radius: 8px;
+    font-size: 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+nav button {
+    color: rgb(58, 49, 49);
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav button:hover {
+    color: rgb(196, 184, 184);
+}

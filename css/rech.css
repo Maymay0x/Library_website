@@ -1,0 +1,226 @@
+body {
+    background-image: url('../Source/fonglog.jpg');
+    background-size: cover;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#barrerech {
+    margin-top: 50px;;
+}
+
+form label,
+form input,
+form select {
+    margin: 10px;
+}
+
+input[type="text"],
+select {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #777;
+}
+
+option.custom-op {
+    background-color: #333;
+}
+
+button[type="submit"] {
+    background-color: #7c4474ad;
+    margin: 5px;
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+button[type="submit"]:hover {
+    background-color: #9a7a86;
+    color: black
+}
+
+.annonces-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.annonce {
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+
+}
+
+.annonce:hover {
+    transform: scale(1.1);
+transition: ease-in-out 0.2s;
+background-color: #524c4c;
+}
+
+.annonce img {
+    width: 150px; /* Ajustez cette valeur selon vos besoins */
+    height: auto;
+    margin-right: 20px;
+    border-radius: 15px;
+}
+
+.annonce-details {
+    flex: 1;
+}
+
+.annonce-details h3 {
+    margin: 0 0 10px;
+}
+
+.annonce-p {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.annonce-p p {
+    margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .annonce {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .annonce img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+h3 {
+    font-size: 160%;
+}
+
+nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    border-radius: 8px;
+}
+
+
+a:nth-child(1) {
+    width: 200px;
+}
+
+a:nth-child(2) {
+    width: 200px;
+}
+
+a:nth-child(3) {
+    width: 200px;
+}
+
+
+
+
+a:nth-child(1):hover~.animation {
+    width: 200px;
+    left: 0;
+    background-color: #451a3c;
+}
+
+a:nth-child(2):hover~.animation {
+    width: 200px;
+    left: 200px;
+    background-color: #802755;
+}
+
+a:nth-child(3):hover~.animation {
+    width: 200px;
+    left: 400px;
+    background-color: #846175;
+}
+
+
+
+nav {
+    position: relative;
+    width: 600px;
+    height: 50px;
+    background-color: #a893aa;
+    border-radius: 8px;
+    font-size: 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+}
+
+nav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    color: rgb(58, 49, 49);
+}
+
+nav a:hover {
+    color: rgb(196, 184, 184);
+}

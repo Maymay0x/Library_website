@@ -1,0 +1,103 @@
+<?php
+session_start();
+
+// Fonction pour choisir un mot aléatoire dans le fichier mots.txt
+function choisirMotAleatoire()
+{
+    $mots = file("mots.txt");
+    $motAleatoire = trim($mots[rand(0, count($mots) - 1)]);
+    return strtoupper($motAleatoire); // Convertir en majuscules pour faciliter la comparaison
+}
+
+// Initialiser les variables de session si nécessaire
+if (!isset($_SESSION['mot'])) {
+    $_SESSION['mot'] = choisirMotAleatoire();
+    $_SESSION['bons'] = array_fill(0, strlen($_SESSION['mot']), false);
+    $_SESSION['erreurs'] = array();
+}
+
+// Si une lettre a été soumise
+if (isset($_POST['lettre'])) {
+    $lettre = strtoupper($_POST['lettre']); // Convertir en majuscules pour faciliter la comparaison
+
+    // Vérifier si la lettre est dans le mot
+    $lettreTrouvee = false;
+    for ($i = 0; $i < strlen($_SESSION['mot']); $i++) {
+        if ($_SESSION['mot'][$i] == $lettre) {
+            $_SESSION['bons'][$i] = true;
+            $lettreTrouvee = true;
+        }
+    }
+    // Si la lettre n'est pas dans le mot, l'ajouter aux erreurs
+    if (!$lettreTrouvee) {
+        $_SESSION['erreurs'][] = $lettre;
+    }
+}
+// Vérifie si le joueur a gagné
+$gagne = true;
+if (isset($_SESSION['mot'])) {
+    foreach ($_SESSION['bons'] as $lettreTrouvee) {
+        if (!$lettreTrouvee) {
+            $gagne = false;
+            break;
+        }
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du pendu</title>
+    <style>
+        .lettre {
+            border-bottom: 1px solid black;
+            margin: 0 5px;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jeu du pendu</h1>
+    <div>
+        <?php
+        // Affiche les lettres du mot
+        if (isset($_SESSION['mot'])) {
+            for ($i = 0; $i < strlen($_SESSION['mot']); $i++) {
+                if ($_SESSION['bons'][$i]) {
+                    echo '<span class="lettre">' . $_SESSION['mot'][$i] . '</span>';
+                } else {
+                    echo '<span class="lettre">&nbsp;</span>';
+                }
+            }
+        }
+        ?>
+    </div>
+    <p>Erreurs : <?php echo isset($_SESSION['erreurs']) ? implode(', ', $_SESSION['erreurs']) : ''; ?></p>
+    <?php if (!$gagne && isset($_SESSION['mot']) && count($_SESSION['erreurs']) < 6) : ?>
+        <form method="post">
+            <label for="lettre">Entrez une lettre :</label>
+            <input type="text" id="lettre" name="lettre" maxlength="1" pattern="[A-Za-z]" required>
+            <button type="submit">Proposer</button>
+        </form>
+    <?php elseif ($gagne) : ?>
+        <p>Félicitations, vous avez gagné !</p>
+        <p><a href="<?php echo $_SERVER['PHP_SELF']; ?>">Rejouer</a></p>
+    <?php else : ?>
+        <p>Dommage, vous avez perdu. Le mot était : <?php echo isset($_SESSION['mot']) ? $_SESSION['mot'] : ''; ?></p>
+        <p><a href="<?php echo $_SERVER['PHP_SELF']; ?>">Rejouer</a></p>
+    <?php endif; ?>
+</body>
+<?php
+//réinitialiser la partie
+if ($gagne || count($_SESSION['erreurs']) >= 6) {
+    unset($_SESSION['mot']);
+    unset($_SESSION['bons']);
+    unset($_SESSION['erreurs']);
+}
+?>
+
+</html>

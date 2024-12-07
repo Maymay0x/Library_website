@@ -1,0 +1,72 @@
+/* Style global pour le corps de la page */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #0d0124, #300111);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Conteneur central pour le message de retour */
+.retour {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.retour:hover {
+    transform: translateY(-10px);
+    opacity: 0.95;
+}
+
+/* Style pour les paragraphes */
+p {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+}
+
+/* Style pour le lien de retour */
+ a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #8f5c7e52;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+a:hover {
+    background-color: #27a37e;
+    transform: translateY(-5px);
+}
+
+/* Ajouter une animation de fondu lors du chargement de la page */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-in;
+}

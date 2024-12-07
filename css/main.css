@@ -1,0 +1,227 @@
+body {
+    background-image: url("../Source/fonglog.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+header {
+    background-color: transparent;
+    padding-top: 10px ;
+}
+
+header img {
+    margin-top: 50px;
+    border-radius: 3%;
+    max-height: 80%;
+}
+.role-banner {
+    text-align: center;
+}
+
+.role-banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    border-radius: 8px;
+}
+
+
+a:nth-child(1) {
+    width: 200px;
+}
+
+a:nth-child(2) {
+    width: 200px;
+}
+
+a:nth-child(3) {
+    width: 200px;
+}
+
+
+a:nth-child(1):hover~.animation {
+    width: 200px;
+    left: 0;
+    background-color: #451a3c;
+}
+
+a:nth-child(2):hover~.animation {
+    width: 200px;
+    left: 200px;
+    background-color: #802755;
+}
+
+a:nth-child(3):hover~.animation {
+    width: 200px;
+    left: 400px;
+    background-color: #846175;
+}
+
+
+
+nav {
+    position: relative;
+    width: 600px;
+    height: 50px;
+    background-color: #a893aa;
+    border-radius: 8px;
+    font-size: 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+nav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(58, 49, 49);
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: rgb(196, 184, 184);
+}
+
+
+.nav_logo {
+    display: inline-block; /* Pour qu'elle soit alignée à gauche avec les autres éléments */
+    margin-right: 5px; /* Ajoute une marge à droite pour séparer visuellement les éléments */
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 150px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: max-content;
+    /* Réglage à max-content pour s'adapter dynamiquement à la largeur des éléments à l'intérieur */
+}
+
+.book {
+    margin-right: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.book img {
+    width: 200px;
+    height: 300px;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.book img:hover {
+    transform: scale(1.1);
+}
+
+/* Ajustement pour s'assurer que les éléments du carrousel sont alignés horizontalement */
+.carousel a {
+    flex-shrink: 0;
+}
+
+/* Pour créer l'effet de défilement, ajoutez ce style */
+.book:first-child {
+    margin-left: 20px;
+}
+
+.my-carousel-container {
+    position: relative;
+    max-width: 70%; /* Ajustement de la largeur du contenu du carousel */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.my-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.my-slide {
+    flex: 0 0 100%;
+    position: relative;
+    text-align: center;
+    /* Pour centrer l'image horizontalement */
+}
+
+.my-slide img {
+    width: 80%;
+    /* Pour que l'image prenne tout l'espace disponible */
+    height: 100%;
+    /* Pour conserver les proportions de l'image */
+}
+
+
+
+.my-prev,
+.my-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.my-prev {
+    left: 10px;
+}
+
+.my-next {
+    right: 10px;
+}

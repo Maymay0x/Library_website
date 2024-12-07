@@ -1,0 +1,51 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+footer {
+    background-color: #cbc2ca3d;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width:100%;
+    margin-top: 100px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+footer a {
+    color:white;
+}

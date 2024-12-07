@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.game-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#game-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 100vh;
+    background-color: #99d8d0;
+    overflow: hidden;
+}
+
+#bird {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    top: 250px;
+    left: 50px;
+    border-radius: 50%;
+}
+
+#pipe,
+#pipe2 {
+    position: absolute;
+    width: 60px;
+    background-image: url('../../source/tuyau.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+#pipe {
+    top: 0;
+}
+
+#pipe2 {
+    bottom: 0;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+#game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+#countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+button,
+a.menu-button,
+a.exit-button {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button:hover,
+a.menu-button:hover,
+a.exit-button:hover {
+    background-color: #0056b3;
+}

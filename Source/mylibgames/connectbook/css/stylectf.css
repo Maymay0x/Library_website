@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.container {
+    position: relative;
+}
+
+#gameCanvas {
+    border: 2px solid #1877f2;
+    background-color: #b1b1b19a;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal h1 {
+    font-size: 32px;
+    color: #1877f2;
+    margin-bottom: 20px;
+}
+
+.modal p {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.modal button {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal button:hover {
+    background-color: #0e5a9c;
+}
+
+.score-display {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.lives-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #ff0000;
+}
